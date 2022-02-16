@@ -1,0 +1,10 @@
+{
+    "name": "Waggle Organization CI - Go",
+    "description": "Waggle Organization CI for Go repos.",
+    "categories": [
+        "Go"
+    ],
+    "filePatterns": [
+        "*.go$"
+    ]
+}
