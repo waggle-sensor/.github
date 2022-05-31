@@ -8,6 +8,8 @@ Waggle is designed from the ground up with security, privacy, extensability, and
 
 The name for the project comes from nature’s wireless sensors — honeybees. Bees search far and wide for pollen, and report their findings back to the hive using a sophisticated dance called a [“waggle dance“](https://en.wikipedia.org/wiki/Waggle_dance). The dance encodes the distance and angle to the food source, and is often similar to a figure-8 — which is why we picked [wa8.gl](http://wa8.gl/) as our domain name. Waggle is free under the terms of an open-source license. 
 
+Built as a set of open-source tools, plugins, and infrastructure codes, the specialized waggle software services offer greater efficiency and flexibility than traditional monolithic/single vendor designs. They are also applicable to new sensing technologies, scientific instruments, and infrastructure elements as they emerge. That includes new computing devices, data storage, networking technologies, communication protocols, and computing paradigms (fog, 5G MEC etc.) This capability is in especially high demand as scientists around the world embrace phenomenal growth in three directions - sensors, computing devices, and AI/ML algorithms. Together, the progress in these three domains has made it possible to sense and assimilate the world around us at a pace that was never before possible using algorithms that are beginning to write themselves.
+
 # Waggle AI@Edge Basics
 
 Waggle is a new kind of reusable cyber-infrastructure to enable AI at the edge, iteratively developed over 8 years. The illustration below shows a high-level view of the Waggle AI@Edge architecture and enumerates the various software services, tools, and infrastructure pieces. 
