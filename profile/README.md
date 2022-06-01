@@ -1,4 +1,4 @@
-# [Waggle AI@Edge](https://github.com/orgs/waggle-sensor/repositories)
+# Waggle AI@Edge
 
 Waggle is a state-of-the-art open-source platform for developing and deploying novel artificial intelligence algorithms and new sensors into distributed sensor networks.  By providing  advanced edge computing capabilities, researchers and practitioners using Waggle can analyze high-resolution instrument data at unprecedented speeds, providing new insights and answering scientific questions not previously possible.
 
