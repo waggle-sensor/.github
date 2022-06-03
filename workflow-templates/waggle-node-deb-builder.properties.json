@@ -1,0 +1,10 @@
+{
+    "name": "Waggle Node Debian Package Builder CI",
+    "description": "Waggle Node Debian package builder on release",
+    "categories": [
+        "Bash"
+    ],
+    "filePatterns": [
+        "^build.sh"
+    ]
+}
