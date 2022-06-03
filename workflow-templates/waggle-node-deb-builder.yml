@@ -3,6 +3,7 @@ name: Waggle Node Debian Package Builder CI
 on:
   push:
     branches: [$default-branch]
+    tags: ["*"]
   pull_request:
     branches: [$default-branch]
 
