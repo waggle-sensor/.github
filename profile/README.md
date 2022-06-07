@@ -1,5 +1,10 @@
 # Waggle AI@Edge
-
+<img src="./Photo1.png" width="900"></br>
+<br> **Figure 1:** Spanning from the network edge to the Cloud and HPC, Waggle AI@Edge is a programmable cyberinfrastructure composed of software and hardware, for interfacing new sensors, actuators, and instruments through traditional computing and AI/ML inference. The figure shows the various building blocks of the Waggle framework.
+</br>
+</br>
+</br>
+ 
 Waggle is a state-of-the-art open-source platform for developing and deploying novel artificial intelligence algorithms and new sensors into distributed sensor networks.  By providing  advanced edge computing capabilities, researchers and practitioners using Waggle can analyze high-resolution instrument data at unprecedented speeds, providing new insights and answering scientific questions not previously possible. 
 
 In many scientific disciplines, sensors and instruments are deployed in remote locations to provide valuable, real-time data streams.  In the Western US, remotely deployed cameras are used to provide real-time images of wilderness areas to aid in wildfire monitoring.  In cities, air quality sensors are used to understand the impact of electric vehicles.  In prairies, audio data streams can be analyzed for birdsong to provide key data on bird migrations. The sensing needs of the above studies differ vastly. To support these significantly varying scientific endeavors Waggle provides two key features: low-power edge computing embedded into distributed sensor arrays and a modular architecture for easily integrating new sensors.  
