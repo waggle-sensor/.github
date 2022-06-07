@@ -1,15 +1,18 @@
 # Waggle AI@Edge
 <img src="https://raw.githubusercontent.com/waggle-sensor/.github/main/profile/Photo1.png" width="900"></br>
-<br> **Figure 1:** Spanning from the network edge to the Cloud and HPC, Waggle AI@Edge is a programmable cyberinfrastructure composed of software and hardware, for interfacing new sensors, actuators, and instruments through traditional computing and AI/ML inference. The figure shows the various building blocks of the Waggle framework.
+**Figure 1:** Spanning from the network edge to the Cloud and HPC, Waggle AI@Edge is a programmable cyberinfrastructure composed of software and hardware, for interfacing new sensors, actuators, and instruments through traditional computing and AI/ML inference. The figure shows the various building blocks of the Waggle framework.
 </br>
 </br>
-</br>
- 
 Waggle is a state-of-the-art open-source platform for developing and deploying novel artificial intelligence algorithms and new sensors into distributed sensor networks.  By providing  advanced edge computing capabilities, researchers and practitioners using Waggle can analyze high-resolution instrument data at unprecedented speeds, providing new insights and answering scientific questions not previously possible. 
 
 In many scientific disciplines, sensors and instruments are deployed in remote locations to provide valuable, real-time data streams.  In the Western US, remotely deployed cameras are used to provide real-time images of wilderness areas to aid in wildfire monitoring.  In cities, air quality sensors are used to understand the impact of electric vehicles.  In prairies, audio data streams can be analyzed for birdsong to provide key data on bird migrations. The sensing needs of the above studies differ vastly. To support these significantly varying scientific endeavors Waggle provides two key features: low-power edge computing embedded into distributed sensor arrays and a modular architecture for easily integrating new sensors.  
 
 In the domain science communities, there is a technological gap and significant barrier to entry to being able to efficiently design, build, and deploy instrumentation to study such widely varying phenomena and activities, by small groups of researchers. Sensors and instruments which can be programmed and extended using established computer science techniques and programming practices are fundamental to making them easily accessible and readily usable. More than a feature, the strong integration of software with hardware to extend a “software-defined-instrument”, is a necessity. Waggle enables rapid development of customized, networked, and scalable field-ready instrumentation involving cutting-edge sensors and actuators, and associated low-latency AI/ML inference through edge-computing. It allows integration with centralized cloud and HPC resources for advanced and global observations, inferences, and model development.  
+</br>
+<img src="https://raw.githubusercontent.com/waggle-sensor/.github/main/profile/Photo3.png" width="900"></br>
+**Figure 2:** The NSF funded [Sage project](https://sagecontinuum.org/) is deploying several Waggle based Wild Nodes and Blades for research in a wide variety of science domains.  The figure shows some of the current deployment locations. Sage will deploy over 120 nodes across the world.
+</br>
+</br>
 
 The name for the project comes from nature’s wireless sensors — honeybees. Bees search far and wide for pollen, and report their findings back to the hive using a sophisticated dance called a [“waggle dance“](https://en.wikipedia.org/wiki/Waggle_dance). The dance encodes the distance and angle to the food source, and is often similar to a figure-8 — which is why we picked [wa8.gl](http://wa8.gl/) as our domain name. Waggle is free under the terms of an open-source license. 
 
@@ -30,7 +33,10 @@ First, there are the physical Waggle nodes, which are extensible and allow integ
  
 **Wild Waggle Nodes (WWN)** are weatherized for remote, outdoor deployment in remote and hard-to-reach locations. An important feature of our design is the addition of resilience software and electronic hardware elements. The Waggle manager, Wagman, is a custom printed circuit board for environment and health monitoring, and active power control. Wagman can disconnect malfunctioning devices or reboot components with backup software stacks, providing robust operation in remote and harsh locales. Designed to be extremely reliable and resilient, the new release of Wagman (V5) performs all these tasks entirely through hardware components, requiring no firmware. The next most important device is the Node Controller. It is a single-board Linux computer providing encrypted TCP/IP messaging, data caching, node health monitoring, and access to connected sensors and actuators. While the above tasks are its main priority, the node controller is also available to run (through container-based isolation technologies) user applications on the dedicated CPU-GPU resources. Additional processing elements called Edge Processors and storage elements can be added to this basic construct. A collection of components that provide power, networking, and embedded interfacing capabilities complete the basic node. This node can be extended with sensors through standard Ethernet (POE), USB and other embedded protocols. 
 
-
+<img src="https://raw.githubusercontent.com/waggle-sensor/.github/main/profile/Photo2.png" width="900"></br>
+**Figure 3:** The Wild Waggle Nodes reference design is extensively tested for reliability across wide weather conditions, as well as EMI/RF compliance and electrical safety. The figure shows a node prototype undergoing various tests with some example sensors. Also shown is a wire frame that depicts various connectivity options of the node that provide sensor and instrument extensibility.
+</br>
+</br>
 **Waggle Blades** are standard commercially available blade servers intended for use in a climate controlled machine room, or extended temperature range telecom-grade blades for harsher environments. The Waggle platform supports blades with standard x86-64 CPUs and NVIDIA GPUs for AI@Edge computational jobs. As a Waggle Node, they run the same Waggle software stack as the Wild Waggle Node, and therefore can run edge jobs, report data, and be remotely configured.
 
 ## Software Cyberinfrastructure
