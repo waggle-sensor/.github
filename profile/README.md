@@ -10,8 +10,6 @@ In many scientific disciplines, sensors and instruments are deployed in remote l
 In the domain science communities, there is a technological gap and significant barrier to entry to being able to efficiently design, build, and deploy instrumentation to study such widely varying phenomena and activities, by small groups of researchers. Sensors and instruments which can be programmed and extended using established computer science techniques and programming practices are fundamental to making them easily accessible and readily usable. More than a feature, the strong integration of software with hardware to extend a “software-defined-instrument”, is a necessity. Waggle enables rapid development of customized, networked, and scalable field-ready instrumentation involving cutting-edge sensors and actuators, and associated low-latency AI/ML inference through edge-computing. It allows integration with centralized cloud and HPC resources for advanced and global observations, inferences, and model development. 
 
 [Get started with Waggle!](https://docs.waggle-edge.ai)
-
-
 </br>
 </br>
 <img src="https://raw.githubusercontent.com/waggle-sensor/.github/main/profile/Photo3.png" width="900"></br>
