@@ -42,7 +42,7 @@ First, there are the physical Waggle nodes, which are extensible and allow integ
 </br>
 [**Waggle Blades**](https://github.com/waggle-sensor/waggle-blade) are standard commercially available blade servers intended for use in a climate controlled machine room, or extended temperature range telecom-grade blades for harsher environments. The Waggle platform supports blades with standard x86-64 CPUs and NVIDIA GPUs for AI@Edge computational jobs. As a Waggle Node, they run the same Waggle software stack as the Wild Waggle Node, and therefore can run edge jobs, report data, and be remotely configured.
 
-[OS images and software for various waggle nodes are published in our repos.](https://github.com/waggle-sensor/node-platforms)
+[OS images and software for various waggle nodes can be obtained from our repos.](https://github.com/waggle-sensor/node-platforms)
 
 ## Software Cyberinfrastructure
 
