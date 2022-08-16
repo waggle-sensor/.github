@@ -1,4 +1,4 @@
-# Waggle AI@Edge
+# [Waggle AI@Edge](https://docs.waggle-edge.ai)
 <img src="https://raw.githubusercontent.com/waggle-sensor/.github/main/profile/Photo1.png" width="900"></br>
 **Figure 1:** Spanning from the network edge to the Cloud and HPC, Waggle AI@Edge is a programmable cyberinfrastructure composed of software and hardware, for interfacing new sensors, actuators, and instruments through traditional computing and AI/ML inference. The figure shows the various building blocks of the Waggle framework.
 </br>
