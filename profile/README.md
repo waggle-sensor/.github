@@ -30,7 +30,7 @@ Developed over 8 years, Waggle is a new kind of reusable cyberinfrastructure to 
 First, there are the physical Waggle nodes, which are extensible and allow integration of new sensors and instruments. Waggle nodes are designed to be easily deployable into existing network infrastructure. Second, there are the software cyberinfrastructure elements, which support various services for aggregation and dissemination of data, compiling, containerization, and profiling of applications,  and control and management of the nodes. The overarching software cyberinfrastructure also connects the nodes to other cloud/HPC resources and users. The Waggle project on GitHub provides various reference designs for the hardware nodes and the software cyberinfrastructure as a collection of modules.
 
  
-## Waggle Nodes
+## [Waggle Nodes](https://github.com/waggle-sensor/node-platforms)
 
  Following a modular design, nodes enable rapid integration of new sensor technologies, from LiDAR to precision micro-synchrophasors for analysis of electrical distribution systems. While the earlier version of Waggle (one used by AoT) only supported ARM32 architectures, in the most recent Waggle AI@Edge release, we added support for ARM64 and x86-64 edge-focused computing hardware. There are two variants of Waggle Nodes:
  
