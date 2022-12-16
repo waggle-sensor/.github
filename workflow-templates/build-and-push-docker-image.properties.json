@@ -1,7 +1,0 @@
-{
-    "name": "Build and Push Docker Images",
-    "description": "Build and push Docker images on pull requests and release to Waggle repo.",
-    "filePatterns": [
-        "^Dockerfile"
-    ]
-}
