@@ -13,8 +13,9 @@ name: "Build and Push Docker Images"
 #    uses: waggle-sensor/.github/.github/workflows/build-and-push-docker-image.yml@main
 #    secrets: inherit
 #    with:
-#      platforms: "linux/amd64,linux/arm64"   <-- optional, to override default below
-#      context: .                             <-- optional, to override default below
+#      platforms: "linux/amd64,linux/arm64"       <-- optional, to override default below
+#      context: .                                 <-- optional, to override default below
+#      image: ${{ github.event.repository.name }} <-- optional, to override default below
 
 on:
   workflow_call:
@@ -27,6 +28,10 @@ on:
         required: false
         type: string
         default: .
+      image:
+        required: false
+        type: string
+        default: ${{ github.event.repository.name }}
 
 jobs:
   push_to_registry:
@@ -47,7 +52,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            ${{ secrets.DOCKER_ORG }}/${{ github.event.repository.name }}
+            ${{ secrets.DOCKER_ORG }}/${{ inputs.image }}
           tags: |
             type=ref,event=pr
             type=semver,pattern={{major}}
