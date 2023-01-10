@@ -1,0 +1,12 @@
+on:
+  release:
+    types: [published]
+  pull_request:
+    branches: [$default-branch]
+
+# usage instructions: https://github.com/waggle-sensor/.github/blob/main/.github/workflows/build-and-push-docker-image.yml
+jobs:
+  push_to_registry:
+    name: Build
+    uses: waggle-sensor/.github/.github/workflows/build-and-push-docker-image.yml@main
+    secrets: inherit
