@@ -37,6 +37,10 @@ jobs:
   build_and_push_docker_images:
     name: Build and Push Docker Images
     runs-on: ubuntu-20.04
+    outputs:
+      imageid: ${{ steps.build_and_push.outputs.imageid }}
+      digest: ${{ steps.build_and_push.outputs.digest }}
+      metadata: ${{ steps.build_and_push.outputs.metadata }}
     steps:
       - uses: actions/checkout@v4
       - uses: docker/setup-qemu-action@v3
