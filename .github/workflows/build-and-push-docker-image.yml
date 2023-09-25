@@ -34,7 +34,7 @@ on:
         default: ${{ github.event.repository.name }}
 
 jobs:
-  push_to_registry:
+  build_and_push_docker_images:
     name: Build and Push Docker Images
     runs-on: ubuntu-20.04
     steps:
@@ -58,8 +58,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and push
-        uses: docker/build-push-action@v5
+      - uses: docker/build-push-action@v5
         with:
           context: ${{ inputs.context }}
           platforms: ${{ inputs.platforms }}
