@@ -70,4 +70,5 @@ jobs:
           cache-to: type=gha,mode=max
 
       - name: Add summary
-        run: echo '### Docker Image ${{ steps.build_and_push.outputs.digest }}! 🚀' >> $GITHUB_STEP_SUMMARY
+        run: |
+          echo '### Build and Push Summary\nDocker Image: ${{ steps.meta.outputs.version }}@${{ steps.build_and_push.outputs.digest }}! 🚀' >> $GITHUB_STEP_SUMMARY
