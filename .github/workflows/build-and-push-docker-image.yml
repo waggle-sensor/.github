@@ -71,4 +71,4 @@ jobs:
 
       - name: Add summary
         run: |
-          echo '### Build and Push Summary\nDocker Image: ${{ steps.meta.outputs.version }}@${{ steps.build_and_push.outputs.digest }}! 🚀' >> $GITHUB_STEP_SUMMARY
+          echo 'Tag and Digest: ${{ steps.meta.outputs.version }}@${{ steps.build_and_push.outputs.digest }}' >> $GITHUB_STEP_SUMMARY
