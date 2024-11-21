@@ -37,6 +37,8 @@ jobs:
   build_and_push_docker_images:
     name: Build and Push Docker Images
     runs-on: ubuntu-20.04
+    env:
+      DOCKER_PUSH: ${{ secrets.DOCKER_USERNAME && secrets.DOCKER_PASSWORD }}
     steps:
       - uses: actions/checkout@v4
       - uses: docker/setup-qemu-action@v3
@@ -46,7 +48,7 @@ jobs:
         id: generate_meta
         with:
           images: |
-            ${{ secrets.DOCKER_ORG }}/${{ inputs.image }}
+            waggle/${{ inputs.image }}
           tags: |
             type=ref,event=pr
             type=semver,pattern={{major}}
@@ -55,7 +57,7 @@ jobs:
 
       - uses: docker/build-push-action@v5
         id: build_image
-        if: github.event_name != 'release' || github.event.action != 'published'
+        if: !env.DOCKER_PUSH
         with:
           context: ${{ inputs.context }}
           platforms: ${{ inputs.platforms }}
@@ -67,14 +69,14 @@ jobs:
           cache-to: type=gha,mode=max
 
       - uses: docker/login-action@v3
-        if: github.event_name == 'release' && github.event.action == 'published'
+        if: env.DOCKER_PUSH
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - uses: docker/build-push-action@v5
         id: build_and_push_image
-        if: github.event_name == 'release' && github.event.action == 'published'
+        if: env.DOCKER_PUSH
         with:
           context: ${{ inputs.context }}
           platforms: ${{ inputs.platforms }}
@@ -85,6 +87,6 @@ jobs:
           cache-to: type=gha,mode=max
 
       - name: Add summary
-        if: github.event_name == 'release' && github.event.action == 'published'
+        if: env.DOCKER_PUSH
         run: |
           echo 'Tag and Digest: ${{ steps.generate_meta.outputs.version }}@${{ steps.build_and_push_image.outputs.digest }}' >> $GITHUB_STEP_SUMMARY
