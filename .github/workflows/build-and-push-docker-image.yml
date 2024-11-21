@@ -37,9 +37,15 @@ jobs:
   build_and_push_docker_images:
     name: Build and Push Docker Images
     runs-on: ubuntu-20.04
-    env:
-      DOCKER_PUSH: ${{ secrets.DOCKER_USERNAME && secrets.DOCKER_PASSWORD }}
     steps:
+      - name: Set DOCKER_PUSH env var
+        run: |
+          if [[ -n "${{ secrets.DOCKER_USERNAME }}" && -n "${{ secrets.DOCKER_PASSWORD }}" ]]; then
+            echo "DOCKER_PUSH=true" >> $GITHUB_ENV
+          else
+            echo "DOCKER_PUSH=false" >> $GITHUB_ENV
+          fi
+
       - uses: actions/checkout@v4
       - uses: docker/setup-qemu-action@v3
       - uses: docker/setup-buildx-action@v3
@@ -57,7 +63,7 @@ jobs:
 
       - uses: docker/build-push-action@v5
         id: build_image
-        if: !env.DOCKER_PUSH
+        if: env.DOCKER_PUSH == 'false'
         with:
           context: ${{ inputs.context }}
           platforms: ${{ inputs.platforms }}
@@ -69,14 +75,14 @@ jobs:
           cache-to: type=gha,mode=max
 
       - uses: docker/login-action@v3
-        if: env.DOCKER_PUSH
+        if: env.DOCKER_PUSH == 'true'
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - uses: docker/build-push-action@v5
         id: build_and_push_image
-        if: env.DOCKER_PUSH
+        if: env.DOCKER_PUSH == 'true'
         with:
           context: ${{ inputs.context }}
           platforms: ${{ inputs.platforms }}
