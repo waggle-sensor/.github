@@ -55,10 +55,12 @@ jobs:
 
       - uses: docker/build-push-action@v5
         id: build_image
+        if: github.event_name != 'release' || github.event.action != 'published'
         with:
           context: ${{ inputs.context }}
           platforms: ${{ inputs.platforms }}
           push: false
+          load: true
           tags: ${{ steps.generate_meta.outputs.tags }}
           labels: ${{ steps.generate_meta.outputs.labels }}
           cache-from: type=gha
@@ -71,8 +73,8 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - uses: docker/build-push-action@v5
+        id: build_and_push_image
         if: github.event_name == 'release' && github.event.action == 'published'
-        id: push_image
         with:
           context: ${{ inputs.context }}
           platforms: ${{ inputs.platforms }}
@@ -84,4 +86,4 @@ jobs:
 
       - name: Add summary
         run: |
-          echo 'Tag and Digest: ${{ steps.generate_meta.outputs.version }}@${{ steps.push_image.outputs.digest }}' >> $GITHUB_STEP_SUMMARY
+          echo 'Tag and Digest: ${{ steps.generate_meta.outputs.version }}@${{ steps.build_and_push_image.outputs.digest }}' >> $GITHUB_STEP_SUMMARY
