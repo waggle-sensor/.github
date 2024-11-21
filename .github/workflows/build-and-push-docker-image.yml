@@ -85,5 +85,6 @@ jobs:
           cache-to: type=gha,mode=max
 
       - name: Add summary
+        if: github.event_name == 'release' && github.event.action == 'published'
         run: |
           echo 'Tag and Digest: ${{ steps.generate_meta.outputs.version }}@${{ steps.build_and_push_image.outputs.digest }}' >> $GITHUB_STEP_SUMMARY
