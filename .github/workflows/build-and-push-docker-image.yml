@@ -41,8 +41,10 @@ jobs:
       - name: Set DOCKER_PUSH env var
         run: |
           if [[ -n "${{ secrets.DOCKER_USERNAME }}" && -n "${{ secrets.DOCKER_PASSWORD }}" ]]; then
+            echo "Workflow will push images."
             echo "DOCKER_PUSH=true" >> $GITHUB_ENV
           else
+            echo "Workflow will not push images."
             echo "DOCKER_PUSH=false" >> $GITHUB_ENV
           fi
 
@@ -68,7 +70,6 @@ jobs:
           context: ${{ inputs.context }}
           platforms: ${{ inputs.platforms }}
           push: false
-          load: true
           tags: ${{ steps.generate_meta.outputs.tags }}
           labels: ${{ steps.generate_meta.outputs.labels }}
           cache-from: type=gha
