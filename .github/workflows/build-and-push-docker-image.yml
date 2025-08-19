@@ -81,7 +81,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - uses: docker/build-push-action@v5
+      - uses: docker/build-push-action@v6
         id: build_and_push_image
         if: env.DOCKER_PUSH == 'true'
         with:
